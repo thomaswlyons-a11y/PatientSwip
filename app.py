@@ -2,92 +2,290 @@ import streamlit as st
 import json
 import random
 import time
+import os
 
-# --- Configuration & Styling ---
+# --- Configuration & Retro CSS ---
 st.set_page_config(page_title="Retro Triage Sim", layout="centered")
 
-def init_game(num_patients):
+st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
+    .retro-text {
+        font-family: 'Press+Start+2P', cursive;
+        color: #00FF00;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Stats Bar */
+    .stat-box {
+        background-color: #222;
+        border: 2px solid #00FF00;
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        font-family: monospace;
+        margin-bottom: 10px;
+    }
+
+    /* Leaderboard Styles */
+    .arcade-container {
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        background: black;
+        border: 4px solid #333;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+    }
+
+    .scroll-content {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        /* Start below the container */
+        transform: translateY(100%);
+        animation: scroll-up 15s linear infinite;
+    }
+
+    .score-entry {
+        font-family: 'Press+Start+2P', cursive;
+        color: #FFFF00;
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px #FF0000;
+    }
+
+    @keyframes scroll-up {
+        0% { transform: translateY(100%); }
+        100% { transform: translateY(-120%); }
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# --- 1. Helper Functions ---
+
+def init_game(shift_hours, bed_count):
+    # Load patients
+    if not os.path.exists('patients.json'):
+        st.error("patients.json not found! Please run the generator first.")
+        st.stop()
+        
     with open('patients.json', 'r') as f:
-        all_cases = json.load(f)
-    selected = random.sample(all_cases, min(num_patients, len(all_cases)))
-    st.session_state.queue = selected
-    st.session_state.results = []
-    st.session_state.start_time = time.time()
-    st.session_state.game_active = True
-    st.session_state.current_index = 0
+        all_data = json.load(f)
+    
+    # Game State Initialization
+    st.session_state.waiting_room = random.sample(all_data, min(50, len(all_data))) # Pool of potential patients
+    st.session_state.active_patients = [] # Patients currently being managed (in waiting room or beds)
+    
+    # We pull the first few patients into the "active cycle"
+    for _ in range(min(5, len(st.session_state.waiting_room))):
+        st.session_state.active_patients.append(st.session_state.waiting_room.pop(0))
+        
+    st.session_state.beds_total = bed_count
+    st.session_state.beds_occupied = 0
+    st.session_state.time_remaining = shift_hours * 60 # Convert to minutes
+    st.session_state.money_spent = 0
+    st.session_state.results_log = [] # Stores correct/incorrect decisions
+    st.session_state.game_over = False
+    st.session_state.current_patient_idx = 0 # Pointer for the cycle
+    st.session_state.last_action = "Shift Started"
 
-# --- 1. Splash Screen / Disclaimer ---
-if 'disclaimer_accepted' not in st.session_state:
-    st.title("🏥 Retro Triage Sim")
-    st.warning("### MEDICAL DISCLAIMER")
-    st.write("""
-    This application is a **NON-CLINICAL simulation**. It is intended for educational/entertainment 
-    purposes only and does NOT provide medical advice, diagnosis, or treatment. 
-    Using this for real-world clinical decision-making carries significant risk of patient harm.
-    """)
-    if st.button("I UNDERSTAND THE RISKS - START"):
-        st.session_state.disclaimer_accepted = True
-        st.rerun()
-    st.stop()
+def get_leaderboard():
+    if not os.path.exists('leaderboard.txt'):
+        return []
+    with open('leaderboard.txt', 'r') as f:
+        lines = [line.strip().split(',') for line in f.readlines() if line.strip()]
+    # Sort by Score (Desc)
+    return sorted(lines, key=lambda x: -int(x[1]))
 
-# --- 2. Game Setup ---
+# --- 2. Main Menu / Leaderboard ---
 if 'game_active' not in st.session_state:
-    st.title("Game Setup")
-    count = st.slider("How many patients to triage?", 5, 100, 10)
-    if st.button("Begin Shift"):
-        init_game(count)
+    st.session_state.game_active = False
+
+if not st.session_state.game_active:
+    st.markdown("<h1 class='retro-text'>RETRO TRIAGE MANAGER</h1>", unsafe_allow_html=True)
+    
+    col_menu, col_scores = st.columns(2)
+    
+    with col_menu:
+        st.subheader("Shift Configuration")
+        shift_len = st.number_input("Shift Duration (Hours)", 1, 12, 4)
+        bed_num = st.number_input("Available Beds", 1, 20, 5)
+        
+        st.info("⚠️ PoC Trop: Fast (20m) & Expensive.\n⚠️ Lab Trop: Slow (65m+) & Cheap.")
+        
+        if st.button("START SHIFT"):
+            init_game(shift_len, bed_num)
+            st.session_state.game_active = True
+            st.rerun()
+
+    with col_scores:
+        if st.checkbox("View Leaderboard"):
+            scores = get_leaderboard()
+            html_content = "".join([f"<div class='score-entry'>{s[0]} ..... {s[1]}% (${s[2]})</div>" for s in scores])
+            st.markdown(f"""
+                <div class="arcade-container">
+                    <div class="scroll-content">
+                        <div class="score-entry" style="color:#FFF">TOP AGENTS</div>
+                        <div class="score-entry">----------</div>
+                        {html_content}
+                    </div>
+                </div>
+            """, unsafe_allow_html=True)
+    
+    st.stop()
+
+# --- 3. Game Engine ---
+
+# Check Game Over Conditions
+if st.session_state.time_remaining <= 0 or (len(st.session_state.active_patients) == 0 and len(st.session_state.waiting_room) == 0):
+    st.session_state.game_active = False
+    
+    # Calculate Score
+    if len(st.session_state.results_log) > 0:
+        safety_score = int((sum(st.session_state.results_log) / len(st.session_state.results_log)) * 100)
+    else:
+        safety_score = 0
+        
+    st.balloons()
+    st.markdown("<h1 class='retro-text'>SHIFT OVER</h1>", unsafe_allow_html=True)
+    st.metric("Final Safety Score", f"{safety_score}%")
+    st.metric("Budget Used", f"${st.session_state.money_spent}")
+    
+    name = st.text_input("ENTER 3-LETTER INITIALS:", max_chars=3).upper()
+    if st.button("SUBMIT TO LEADERBOARD"):
+        with open("leaderboard.txt", "a") as f:
+            f.write(f"{name},{safety_score},{st.session_state.money_spent}\n")
+        st.success("SAVED.")
+        time.sleep(2)
+        del st.session_state.game_active
         st.rerun()
     st.stop()
 
-# --- 3. Gameplay Loop ---
-queue = st.session_state.queue
-if len(queue) > 0:
-    current_patient = queue[0]
-    
-    st.header(f"Patient Slot: {len(st.session_state.results) + 1}")
-    
-    # 8-bit Placeholder (You can replace URL with local 8-bit assets)
-    st.image(f"https://api.dicebear.com/7.x/pixel-art/svg?seed={current_patient['name']}", width=150)
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        st.metric("Patient", current_patient['name'])
-        st.write(f"**Vitals:** {current_patient['vitals']}")
-    with col2:
-        st.write(f"**Complaint:** {current_patient['complaint']}")
+# --- HUD (Heads Up Display) ---
+c1, c2, c3, c4 = st.columns(4)
+c1.metric("⏱ Time Left", f"{st.session_state.time_remaining} min")
+c2.metric("🛏 Beds", f"{st.session_state.beds_occupied} / {st.session_state.beds_total}")
+c3.metric("💰 Cost", f"${st.session_state.money_spent}")
+c4.metric("👥 Queue", f"{len(st.session_state.waiting_room)}")
 
-    # Action Buttons
-    c1, c2, c3, c4 = st.columns(4)
-    choice = None
+# --- Patient Selection Logic (Random Loop) ---
+# Ensure index is valid
+if st.session_state.current_patient_idx >= len(st.session_state.active_patients):
+    st.session_state.current_patient_idx = 0
+
+current_p = st.session_state.active_patients[st.session_state.current_patient_idx]
+
+# Initialize patient specific tracking if new
+if 'status' not in current_p:
+    current_p['status'] = 'Waiting' # Waiting, Bedded, Ready
+    current_p['test_ordered_at'] = None
+    current_p['result_time'] = None
+    current_p['test_result_str'] = None
+
+# --- Display Patient ---
+st.markdown("---")
+col_img, col_info = st.columns([1, 2])
+
+with col_img:
+    st.image(f"https://api.dicebear.com/7.x/pixel-art/svg?seed={current_p['name']}", width=150)
+    if current_p['status'] == 'Bedded':
+        st.warning(f"🛏 IN BED")
+        # Check if results are back
+        time_elapsed = (st.session_state.time_remaining - current_p['test_ordered_at']) * -1 # Logic inversion because time counts down
+        # Wait logic: current_time is smaller than ordered_time. 
+        # Actually easier: Store "Result Available At Minute X". 
+        
+        if st.session_state.time_remaining <= current_p['result_arrival_time']:
+            st.success("✅ RESULTS BACK")
+            st.info(current_p['test_result_str'])
+        else:
+            wait_min = st.session_state.time_remaining - current_p['result_arrival_time']
+            st.info(f"⏳ Analyzing... (~{wait_min}m)")
+
+with col_info:
+    st.subheader(f"{current_p['name']}")
+    st.write(f"**Presentation:** {current_p['complaint']}")
+    st.write(f"**Vitals:** {current_p['vitals']}")
+
+# --- Actions ---
+st.write("### Actions")
+ac1, ac2, ac3, ac4, ac5 = st.columns(5)
+
+# 1. DISCHARGE
+if ac1.button("Discharge"):
+    is_safe = current_p['correct_action'] == "Discharge"
+    st.session_state.results_log.append(is_safe)
+    if current_p['status'] == 'Bedded':
+        st.session_state.beds_occupied -= 1
     
-    if c1.button("Discharge"): choice = "Discharge"
-    if c2.button("Diagnostics"): st.info(f"Test Results: {current_patient['tests']}")
-    if c3.button("Observe"): 
-        st.session_state.queue.append(st.session_state.queue.pop(0))
+    st.session_state.active_patients.pop(st.session_state.current_patient_idx)
+    # Add new patient from waiting room to active cycle
+    if st.session_state.waiting_room:
+        st.session_state.active_patients.append(st.session_state.waiting_room.pop(0))
+    
+    st.session_state.time_remaining -= 5 # Paperwork time
+    st.session_state.current_patient_idx = random.randint(0, len(st.session_state.active_patients) - 1) if st.session_state.active_patients else 0
+    st.rerun()
+
+# 2. ADMIT
+if ac2.button("Admit"):
+    is_safe = current_p['correct_action'] == "Admit"
+    st.session_state.results_log.append(is_safe)
+    if current_p['status'] == 'Bedded':
+        st.session_state.beds_occupied -= 1
+        
+    st.session_state.active_patients.pop(st.session_state.current_patient_idx)
+    if st.session_state.waiting_room:
+        st.session_state.active_patients.append(st.session_state.waiting_room.pop(0))
+        
+    st.session_state.time_remaining -= 15 # Admission takes longer
+    st.session_state.current_patient_idx = random.randint(0, len(st.session_state.active_patients) - 1) if st.session_state.active_patients else 0
+    st.rerun()
+
+# 3. PoC TROPONIN (Fast, Expensive)
+if ac3.button("PoC Trop ($50)"):
+    if current_p['status'] == 'Bedded':
+        st.error("Already in a bed!")
+    elif st.session_state.beds_occupied >= st.session_state.beds_total:
+        st.error("NO BEDS AVAILABLE!")
+    else:
+        current_p['status'] = 'Bedded'
+        st.session_state.beds_occupied += 1
+        st.session_state.money_spent += 50
+        current_p['test_ordered_at'] = st.session_state.time_remaining
+        # Arrival time = Current - 20 mins
+        current_p['result_arrival_time'] = st.session_state.time_remaining - 20
+        current_p['test_result_str'] = current_p['tests']
+        st.session_state.time_remaining -= 5 # Action time
         st.rerun()
-    if c4.button("Admit"): choice = "Admit"
 
-    if choice:
-        # Simple Scoring: Is the choice correct?
-        is_safe = choice == current_patient['correct_action']
-        st.session_state.results.append(is_safe)
-        st.session_state.queue.pop(0)
+# 4. LAB TROPONIN (Slow, Cheap)
+if ac4.button("Lab Trop ($10)"):
+    if current_p['status'] == 'Bedded':
+        st.error("Already in a bed!")
+    elif st.session_state.beds_occupied >= st.session_state.beds_total:
+        st.error("NO BEDS AVAILABLE!")
+    else:
+        current_p['status'] = 'Bedded'
+        st.session_state.beds_occupied += 1
+        st.session_state.money_spent += 10
+        current_p['test_ordered_at'] = st.session_state.time_remaining
+        # Arrival time = Current - (65 + random)
+        delay = 65 + random.randint(0, 30)
+        current_p['result_arrival_time'] = st.session_state.time_remaining - delay
+        current_p['test_result_str'] = current_p['tests']
+        st.session_state.time_remaining -= 5 # Action time
         st.rerun()
 
-# --- 4. Scoreboard & Ending ---
-else:
-    total_time = round(time.time() - st.session_state.start_time, 2)
-    safety_score = int((sum(st.session_state.results) / len(st.session_state.results)) * 100)
-    
-    st.balloons()
-    st.title("Shift Complete!")
-    st.subheader(f"Safety Score: {safety_score}% | Time: {total_time}s")
-    
-    name = st.text_input("Enter 3-letter initials:", max_chars=3).upper()
-    if st.button("Submit to Leaderboard"):
-        with open("leaderboard.txt", "a") as f:
-            f.write(f"{name},{safety_score},{total_time}\n")
-        st.write("Score Saved!")
-        if st.button("Play Again"):
-            del st.session_state.game_active
-            st.rerun()
+# 5. CYCLE / NEXT PATIENT (Random Loop)
+if ac5.button("Cycle / Next"):
+    st.session_state.time_remaining -= 2 # Time passes when reviewing charts
+    if len(st.session_state.active_patients) > 1:
+        # Pick a random index that isn't the current one (if possible)
+        possible_indices = list(range(len(st.session_state.active_patients)))
+        possible_indices.remove(st.session_state.current_patient_idx)
+        st.session_state.current_patient_idx = random.choice(possible_indices)
+    st.rerun()
