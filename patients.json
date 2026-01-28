@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Patient 001",
+    "complaint": "Crushing chest pain, radiating to left arm.",
+    "vitals": "BP 160/95, HR 110, SpO2 94%",
+    "tests": "ECG shows ST-elevation in leads II, III, aVF.",
+    "correct_action": "Admit"
+  },
+  {
+    "name": "Patient 002",
+    "complaint": "Minor stubbed toe, no swelling.",
+    "vitals": "BP 120/80, HR 70, SpO2 99%",
+    "tests": "X-ray negative for fracture.",
+    "correct_action": "Discharge"
+  }
+]
