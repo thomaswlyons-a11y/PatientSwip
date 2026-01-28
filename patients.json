@@ -1,16 +1,4202 @@
 [
-  {
-    "name": "Patient 001",
-    "complaint": "Crushing chest pain, radiating to left arm.",
-    "vitals": "BP 160/95, HR 110, SpO2 94%",
-    "tests": "ECG shows ST-elevation in leads II, III, aVF.",
-    "correct_action": "Admit"
-  },
-  {
-    "name": "Patient 002",
-    "complaint": "Minor stubbed toe, no swelling.",
-    "vitals": "BP 120/80, HR 70, SpO2 99%",
-    "tests": "X-ray negative for fracture.",
-    "correct_action": "Discharge"
-  }
+    {
+        "name": "Patient 001",
+        "complaint": "60y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 002",
+        "complaint": "55y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 003",
+        "complaint": "57y Male. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 004",
+        "complaint": "65y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 005",
+        "complaint": "19y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 006",
+        "complaint": "68y Non-binary. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 007",
+        "complaint": "58y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 008",
+        "complaint": "55y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 009",
+        "complaint": "32y Female. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 010",
+        "complaint": "59y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 011",
+        "complaint": "42y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 012",
+        "complaint": "79y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 013",
+        "complaint": "88y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 014",
+        "complaint": "50y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 015",
+        "complaint": "42y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 016",
+        "complaint": "83y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 017",
+        "complaint": "76y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 018",
+        "complaint": "51y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 019",
+        "complaint": "80y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 020",
+        "complaint": "37y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 021",
+        "complaint": "63y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 022",
+        "complaint": "72y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 023",
+        "complaint": "45y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 024",
+        "complaint": "90y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 025",
+        "complaint": "79y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 026",
+        "complaint": "88y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 027",
+        "complaint": "75y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 028",
+        "complaint": "80y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 029",
+        "complaint": "79y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 030",
+        "complaint": "62y Female. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 031",
+        "complaint": "75y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 032",
+        "complaint": "46y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 033",
+        "complaint": "20y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 034",
+        "complaint": "74y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 035",
+        "complaint": "23y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 036",
+        "complaint": "59y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 037",
+        "complaint": "54y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 038",
+        "complaint": "64y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 039",
+        "complaint": "73y Male. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 040",
+        "complaint": "88y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 041",
+        "complaint": "28y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 042",
+        "complaint": "70y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 043",
+        "complaint": "59y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 044",
+        "complaint": "65y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 045",
+        "complaint": "62y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 046",
+        "complaint": "55y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 047",
+        "complaint": "89y Non-binary. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 048",
+        "complaint": "65y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 049",
+        "complaint": "72y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 050",
+        "complaint": "61y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 051",
+        "complaint": "94y Male. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 052",
+        "complaint": "80y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 053",
+        "complaint": "49y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 054",
+        "complaint": "71y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 055",
+        "complaint": "59y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 056",
+        "complaint": "51y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 057",
+        "complaint": "25y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 058",
+        "complaint": "40y Male. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 059",
+        "complaint": "60y Female. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 060",
+        "complaint": "30y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 061",
+        "complaint": "47y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 062",
+        "complaint": "71y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 063",
+        "complaint": "91y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 064",
+        "complaint": "84y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 065",
+        "complaint": "85y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 066",
+        "complaint": "58y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 067",
+        "complaint": "91y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 068",
+        "complaint": "38y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 069",
+        "complaint": "66y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 070",
+        "complaint": "59y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 071",
+        "complaint": "82y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 072",
+        "complaint": "79y Non-binary. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 073",
+        "complaint": "55y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 074",
+        "complaint": "66y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 075",
+        "complaint": "39y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 076",
+        "complaint": "47y Male. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 077",
+        "complaint": "21y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 078",
+        "complaint": "88y Non-binary. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 079",
+        "complaint": "33y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 080",
+        "complaint": "70y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 081",
+        "complaint": "56y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 082",
+        "complaint": "73y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 083",
+        "complaint": "35y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 084",
+        "complaint": "78y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 085",
+        "complaint": "86y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 086",
+        "complaint": "49y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 087",
+        "complaint": "27y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 088",
+        "complaint": "85y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 089",
+        "complaint": "68y Male. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 090",
+        "complaint": "65y Non-binary. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 091",
+        "complaint": "34y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 092",
+        "complaint": "48y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 093",
+        "complaint": "22y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 094",
+        "complaint": "56y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 095",
+        "complaint": "73y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 096",
+        "complaint": "58y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 097",
+        "complaint": "33y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 098",
+        "complaint": "81y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 099",
+        "complaint": "90y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 100",
+        "complaint": "19y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 101",
+        "complaint": "44y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 102",
+        "complaint": "85y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 103",
+        "complaint": "53y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 104",
+        "complaint": "42y Female. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 105",
+        "complaint": "89y Male. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 106",
+        "complaint": "53y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 107",
+        "complaint": "84y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 108",
+        "complaint": "53y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 109",
+        "complaint": "43y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 110",
+        "complaint": "92y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 111",
+        "complaint": "71y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 112",
+        "complaint": "86y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 113",
+        "complaint": "33y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 114",
+        "complaint": "86y Male. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 115",
+        "complaint": "27y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 116",
+        "complaint": "50y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 117",
+        "complaint": "63y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 118",
+        "complaint": "48y Male. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 119",
+        "complaint": "66y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 120",
+        "complaint": "63y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 121",
+        "complaint": "82y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 122",
+        "complaint": "57y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 123",
+        "complaint": "62y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 124",
+        "complaint": "45y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 125",
+        "complaint": "81y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 126",
+        "complaint": "50y Female. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 127",
+        "complaint": "55y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 128",
+        "complaint": "52y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 129",
+        "complaint": "20y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 130",
+        "complaint": "90y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 131",
+        "complaint": "86y Female. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 132",
+        "complaint": "53y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 133",
+        "complaint": "50y Female. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 134",
+        "complaint": "81y Female. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 135",
+        "complaint": "57y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 136",
+        "complaint": "71y Male. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 137",
+        "complaint": "48y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 138",
+        "complaint": "42y Female. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 139",
+        "complaint": "66y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 140",
+        "complaint": "62y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 141",
+        "complaint": "56y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 142",
+        "complaint": "86y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 143",
+        "complaint": "36y Non-binary. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 144",
+        "complaint": "55y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 145",
+        "complaint": "61y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 146",
+        "complaint": "50y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 147",
+        "complaint": "23y Male. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 148",
+        "complaint": "47y Female. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 149",
+        "complaint": "74y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 150",
+        "complaint": "54y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 151",
+        "complaint": "69y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 152",
+        "complaint": "87y Non-binary. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 153",
+        "complaint": "48y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 154",
+        "complaint": "57y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 155",
+        "complaint": "87y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 156",
+        "complaint": "48y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 157",
+        "complaint": "68y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 158",
+        "complaint": "39y Non-binary. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 159",
+        "complaint": "32y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 160",
+        "complaint": "58y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 161",
+        "complaint": "48y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 162",
+        "complaint": "79y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 163",
+        "complaint": "18y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 164",
+        "complaint": "21y Non-binary. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 165",
+        "complaint": "70y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 166",
+        "complaint": "91y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 167",
+        "complaint": "24y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 168",
+        "complaint": "25y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 169",
+        "complaint": "48y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 170",
+        "complaint": "58y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 171",
+        "complaint": "43y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 172",
+        "complaint": "67y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 173",
+        "complaint": "35y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 174",
+        "complaint": "73y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 175",
+        "complaint": "36y Female. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 176",
+        "complaint": "84y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 177",
+        "complaint": "94y Female. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 178",
+        "complaint": "50y Female. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 179",
+        "complaint": "64y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 180",
+        "complaint": "72y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 181",
+        "complaint": "49y Male. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 182",
+        "complaint": "58y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 183",
+        "complaint": "87y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 184",
+        "complaint": "32y Non-binary. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 185",
+        "complaint": "54y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 186",
+        "complaint": "74y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 187",
+        "complaint": "62y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 188",
+        "complaint": "55y Non-binary. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 189",
+        "complaint": "65y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 190",
+        "complaint": "55y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 191",
+        "complaint": "48y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 192",
+        "complaint": "18y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 193",
+        "complaint": "93y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 194",
+        "complaint": "65y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 195",
+        "complaint": "75y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 196",
+        "complaint": "55y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 197",
+        "complaint": "85y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 198",
+        "complaint": "19y Non-binary. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 199",
+        "complaint": "51y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 200",
+        "complaint": "71y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 201",
+        "complaint": "26y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 202",
+        "complaint": "60y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 203",
+        "complaint": "22y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 204",
+        "complaint": "48y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 205",
+        "complaint": "54y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 206",
+        "complaint": "77y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 207",
+        "complaint": "19y Non-binary. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 208",
+        "complaint": "27y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 209",
+        "complaint": "56y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 210",
+        "complaint": "34y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 211",
+        "complaint": "50y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 212",
+        "complaint": "42y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 213",
+        "complaint": "49y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 214",
+        "complaint": "62y Non-binary. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 215",
+        "complaint": "59y Female. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 216",
+        "complaint": "35y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 217",
+        "complaint": "35y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 218",
+        "complaint": "91y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 219",
+        "complaint": "22y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 220",
+        "complaint": "89y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 221",
+        "complaint": "53y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 222",
+        "complaint": "64y Non-binary. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 223",
+        "complaint": "88y Non-binary. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 224",
+        "complaint": "84y Male. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 225",
+        "complaint": "38y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 226",
+        "complaint": "19y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 227",
+        "complaint": "73y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 228",
+        "complaint": "73y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 229",
+        "complaint": "61y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 230",
+        "complaint": "92y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 231",
+        "complaint": "56y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 232",
+        "complaint": "51y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 233",
+        "complaint": "65y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 234",
+        "complaint": "76y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 235",
+        "complaint": "88y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 236",
+        "complaint": "65y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 237",
+        "complaint": "32y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 238",
+        "complaint": "59y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 239",
+        "complaint": "20y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 240",
+        "complaint": "70y Male. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 241",
+        "complaint": "77y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 242",
+        "complaint": "84y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 243",
+        "complaint": "85y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 244",
+        "complaint": "40y Non-binary. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 245",
+        "complaint": "41y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 246",
+        "complaint": "79y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 247",
+        "complaint": "69y Non-binary. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 248",
+        "complaint": "28y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 249",
+        "complaint": "66y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 250",
+        "complaint": "61y Male. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 251",
+        "complaint": "73y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 252",
+        "complaint": "64y Male. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 253",
+        "complaint": "26y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 254",
+        "complaint": "49y Male. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 255",
+        "complaint": "45y Non-binary. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 256",
+        "complaint": "28y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 257",
+        "complaint": "59y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 258",
+        "complaint": "33y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 259",
+        "complaint": "77y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 260",
+        "complaint": "81y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 261",
+        "complaint": "56y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 262",
+        "complaint": "30y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 263",
+        "complaint": "69y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 264",
+        "complaint": "29y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 265",
+        "complaint": "92y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 266",
+        "complaint": "48y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 267",
+        "complaint": "50y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 268",
+        "complaint": "20y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 269",
+        "complaint": "56y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 270",
+        "complaint": "58y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 271",
+        "complaint": "84y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 272",
+        "complaint": "79y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 273",
+        "complaint": "53y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 274",
+        "complaint": "29y Male. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 275",
+        "complaint": "31y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 276",
+        "complaint": "87y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 277",
+        "complaint": "82y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 278",
+        "complaint": "51y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 279",
+        "complaint": "47y Non-binary. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 280",
+        "complaint": "76y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 281",
+        "complaint": "76y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 282",
+        "complaint": "57y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 283",
+        "complaint": "70y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 284",
+        "complaint": "92y Female. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 285",
+        "complaint": "58y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 286",
+        "complaint": "28y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 287",
+        "complaint": "66y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 288",
+        "complaint": "82y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 289",
+        "complaint": "55y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 290",
+        "complaint": "63y Non-binary. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 291",
+        "complaint": "65y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 292",
+        "complaint": "39y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 293",
+        "complaint": "89y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 294",
+        "complaint": "87y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 295",
+        "complaint": "71y Male. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 296",
+        "complaint": "54y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 297",
+        "complaint": "55y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 298",
+        "complaint": "86y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 299",
+        "complaint": "90y Non-binary. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 300",
+        "complaint": "56y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 301",
+        "complaint": "67y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 302",
+        "complaint": "92y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 303",
+        "complaint": "80y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 304",
+        "complaint": "68y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 305",
+        "complaint": "36y Male. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 306",
+        "complaint": "69y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 307",
+        "complaint": "52y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 308",
+        "complaint": "39y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 309",
+        "complaint": "60y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 310",
+        "complaint": "46y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 311",
+        "complaint": "80y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 312",
+        "complaint": "51y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 313",
+        "complaint": "75y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 314",
+        "complaint": "80y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 315",
+        "complaint": "87y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 316",
+        "complaint": "27y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 317",
+        "complaint": "48y Non-binary. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 318",
+        "complaint": "79y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 319",
+        "complaint": "64y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 320",
+        "complaint": "71y Female. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 321",
+        "complaint": "41y Non-binary. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 322",
+        "complaint": "61y Male. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 323",
+        "complaint": "79y Female. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 324",
+        "complaint": "67y Non-binary. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 325",
+        "complaint": "65y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 326",
+        "complaint": "43y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 327",
+        "complaint": "62y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 328",
+        "complaint": "75y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 329",
+        "complaint": "37y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 330",
+        "complaint": "34y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 331",
+        "complaint": "69y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 332",
+        "complaint": "85y Male. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 333",
+        "complaint": "58y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 334",
+        "complaint": "59y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 335",
+        "complaint": "18y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 336",
+        "complaint": "55y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 337",
+        "complaint": "73y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 338",
+        "complaint": "27y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 339",
+        "complaint": "51y Female. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 340",
+        "complaint": "34y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 341",
+        "complaint": "57y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 342",
+        "complaint": "67y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 343",
+        "complaint": "85y Male. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 344",
+        "complaint": "47y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 345",
+        "complaint": "64y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 346",
+        "complaint": "54y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 347",
+        "complaint": "48y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 348",
+        "complaint": "42y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 349",
+        "complaint": "55y Male. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 350",
+        "complaint": "20y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 351",
+        "complaint": "70y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 352",
+        "complaint": "64y Non-binary. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 353",
+        "complaint": "68y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 354",
+        "complaint": "67y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 355",
+        "complaint": "61y Male. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 356",
+        "complaint": "88y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 357",
+        "complaint": "56y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 358",
+        "complaint": "22y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 359",
+        "complaint": "49y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 360",
+        "complaint": "58y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 361",
+        "complaint": "71y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 362",
+        "complaint": "38y Female. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 363",
+        "complaint": "92y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 364",
+        "complaint": "55y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 365",
+        "complaint": "39y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 366",
+        "complaint": "72y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 367",
+        "complaint": "51y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 368",
+        "complaint": "59y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 369",
+        "complaint": "38y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 370",
+        "complaint": "44y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 371",
+        "complaint": "61y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 372",
+        "complaint": "73y Male. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 373",
+        "complaint": "48y Non-binary. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 374",
+        "complaint": "40y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 375",
+        "complaint": "39y Female. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 376",
+        "complaint": "48y Female. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 377",
+        "complaint": "51y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 378",
+        "complaint": "94y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 379",
+        "complaint": "42y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 380",
+        "complaint": "43y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 381",
+        "complaint": "19y Non-binary. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 382",
+        "complaint": "51y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 383",
+        "complaint": "47y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 384",
+        "complaint": "33y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 385",
+        "complaint": "68y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 386",
+        "complaint": "66y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 387",
+        "complaint": "47y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 388",
+        "complaint": "22y Non-binary. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 389",
+        "complaint": "67y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 390",
+        "complaint": "74y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 391",
+        "complaint": "78y Female. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 392",
+        "complaint": "41y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 393",
+        "complaint": "86y Non-binary. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 394",
+        "complaint": "93y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 395",
+        "complaint": "83y Male. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 396",
+        "complaint": "42y Male. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 397",
+        "complaint": "56y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 398",
+        "complaint": "94y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 399",
+        "complaint": "31y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 400",
+        "complaint": "67y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 401",
+        "complaint": "58y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 402",
+        "complaint": "89y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 403",
+        "complaint": "64y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 404",
+        "complaint": "84y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 405",
+        "complaint": "54y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 406",
+        "complaint": "38y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 407",
+        "complaint": "85y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 408",
+        "complaint": "52y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 409",
+        "complaint": "26y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 410",
+        "complaint": "27y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 411",
+        "complaint": "34y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 412",
+        "complaint": "38y Female. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 413",
+        "complaint": "51y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 414",
+        "complaint": "81y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 415",
+        "complaint": "27y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 416",
+        "complaint": "90y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 417",
+        "complaint": "38y Male. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 418",
+        "complaint": "47y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 419",
+        "complaint": "42y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 420",
+        "complaint": "92y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 421",
+        "complaint": "67y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 422",
+        "complaint": "33y Male. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 423",
+        "complaint": "34y Male. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 424",
+        "complaint": "19y Female. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 425",
+        "complaint": "72y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 426",
+        "complaint": "55y Non-binary. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 427",
+        "complaint": "53y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 428",
+        "complaint": "31y Non-binary. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 429",
+        "complaint": "40y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 430",
+        "complaint": "36y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 431",
+        "complaint": "65y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 432",
+        "complaint": "73y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 433",
+        "complaint": "49y Male. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 434",
+        "complaint": "53y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 435",
+        "complaint": "38y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 436",
+        "complaint": "72y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 437",
+        "complaint": "76y Non-binary. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 438",
+        "complaint": "73y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 439",
+        "complaint": "54y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 440",
+        "complaint": "78y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 441",
+        "complaint": "75y Male. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 442",
+        "complaint": "33y Non-binary. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 443",
+        "complaint": "54y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 444",
+        "complaint": "79y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 445",
+        "complaint": "84y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 446",
+        "complaint": "85y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 447",
+        "complaint": "82y Non-binary. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 448",
+        "complaint": "22y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 449",
+        "complaint": "92y Male. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 450",
+        "complaint": "80y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 451",
+        "complaint": "20y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 452",
+        "complaint": "37y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 453",
+        "complaint": "54y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 454",
+        "complaint": "33y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 455",
+        "complaint": "20y Female. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 456",
+        "complaint": "86y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 457",
+        "complaint": "66y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 458",
+        "complaint": "84y Non-binary. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 459",
+        "complaint": "55y Male. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 460",
+        "complaint": "80y Male. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 461",
+        "complaint": "64y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 462",
+        "complaint": "75y Male. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 463",
+        "complaint": "34y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 464",
+        "complaint": "33y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 465",
+        "complaint": "55y Female. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 466",
+        "complaint": "52y Male. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 467",
+        "complaint": "60y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 468",
+        "complaint": "59y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 469",
+        "complaint": "81y Female. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 470",
+        "complaint": "79y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 471",
+        "complaint": "50y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 472",
+        "complaint": "46y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 473",
+        "complaint": "76y Female. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 474",
+        "complaint": "94y Male. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 475",
+        "complaint": "85y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 476",
+        "complaint": "77y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 477",
+        "complaint": "92y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 478",
+        "complaint": "26y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 479",
+        "complaint": "23y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 480",
+        "complaint": "36y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 481",
+        "complaint": "63y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 482",
+        "complaint": "54y Non-binary. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 483",
+        "complaint": "62y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 484",
+        "complaint": "68y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 485",
+        "complaint": "26y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 486",
+        "complaint": "79y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 487",
+        "complaint": "79y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 488",
+        "complaint": "65y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 489",
+        "complaint": "49y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 490",
+        "complaint": "44y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 491",
+        "complaint": "75y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 492",
+        "complaint": "90y Non-binary. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 493",
+        "complaint": "67y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 494",
+        "complaint": "76y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 495",
+        "complaint": "66y Female. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 496",
+        "complaint": "65y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 497",
+        "complaint": "79y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 498",
+        "complaint": "37y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 499",
+        "complaint": "71y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 500",
+        "complaint": "82y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 501",
+        "complaint": "84y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 502",
+        "complaint": "86y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 503",
+        "complaint": "19y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 504",
+        "complaint": "84y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 505",
+        "complaint": "45y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 506",
+        "complaint": "61y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 507",
+        "complaint": "69y Female. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 508",
+        "complaint": "42y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 509",
+        "complaint": "93y Non-binary. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 510",
+        "complaint": "18y Non-binary. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 511",
+        "complaint": "54y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 512",
+        "complaint": "88y Male. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 513",
+        "complaint": "51y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 514",
+        "complaint": "66y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 515",
+        "complaint": "86y Non-binary. Skin redness.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 516",
+        "complaint": "22y Female. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 517",
+        "complaint": "31y Male. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 518",
+        "complaint": "32y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 519",
+        "complaint": "84y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 520",
+        "complaint": "23y Male. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 521",
+        "complaint": "78y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 522",
+        "complaint": "56y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 523",
+        "complaint": "35y Male. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 524",
+        "complaint": "59y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 525",
+        "complaint": "87y Female. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 526",
+        "complaint": "54y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 527",
+        "complaint": "44y Non-binary. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 528",
+        "complaint": "77y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 529",
+        "complaint": "20y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 530",
+        "complaint": "93y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 531",
+        "complaint": "53y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 532",
+        "complaint": "90y Non-binary. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 533",
+        "complaint": "65y Non-binary. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 534",
+        "complaint": "67y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 535",
+        "complaint": "94y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 536",
+        "complaint": "37y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 537",
+        "complaint": "55y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 538",
+        "complaint": "44y Female. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 539",
+        "complaint": "34y Non-binary. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 540",
+        "complaint": "91y Non-binary. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 541",
+        "complaint": "82y Male. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 542",
+        "complaint": "67y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 543",
+        "complaint": "63y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 544",
+        "complaint": "64y Female. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 545",
+        "complaint": "57y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 546",
+        "complaint": "38y Non-binary. Dysuria.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 547",
+        "complaint": "72y Male. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 548",
+        "complaint": "64y Non-binary. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 549",
+        "complaint": "84y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 550",
+        "complaint": "51y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 551",
+        "complaint": "20y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 552",
+        "complaint": "52y Female. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 553",
+        "complaint": "82y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 554",
+        "complaint": "56y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 555",
+        "complaint": "67y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 556",
+        "complaint": "57y Non-binary. Heavy retrosternal pressure radiating to left arm. Nausea.",
+        "vitals": "BP 110/70, HR 105, SpO2 93%, Temp 36.8\u00b0C",
+        "tests": "ECG: ST-elevation in V1-V4. Troponin: 450 ng/L (High).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 557",
+        "complaint": "88y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 97%, HR 85",
+        "tests": "Peak Flow: 450 L/min (Good)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 558",
+        "complaint": "58y Male. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 559",
+        "complaint": "71y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 560",
+        "complaint": "68y Male. Small laceration.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 561",
+        "complaint": "59y Male. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 562",
+        "complaint": "48y Male. Back pain.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 563",
+        "complaint": "53y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 564",
+        "complaint": "26y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 565",
+        "complaint": "70y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 566",
+        "complaint": "40y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 567",
+        "complaint": "25y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 568",
+        "complaint": "55y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 569",
+        "complaint": "82y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 570",
+        "complaint": "77y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 571",
+        "complaint": "45y Female. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 572",
+        "complaint": "40y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 573",
+        "complaint": "50y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 574",
+        "complaint": "51y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 575",
+        "complaint": "88y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 576",
+        "complaint": "53y Non-binary. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: No fracture/Soft tissue only",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 577",
+        "complaint": "48y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 578",
+        "complaint": "38y Male. Fall from height. Pain in Wrist.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 579",
+        "complaint": "41y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 580",
+        "complaint": "63y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 581",
+        "complaint": "75y Male. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 582",
+        "complaint": "65y Non-binary. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 583",
+        "complaint": "56y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 584",
+        "complaint": "67y Non-binary. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 585",
+        "complaint": "64y Female. Productive cough.",
+        "vitals": "BP 90/50, HR 115, Temp 39.1\u00b0C",
+        "tests": "Lactate: 4.2 (High)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 586",
+        "complaint": "49y Male. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 587",
+        "complaint": "28y Male. Skin redness.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 588",
+        "complaint": "76y Female. Sharp chest pain, worse on movement. Tender to touch.",
+        "vitals": "BP 130/80, HR 75, SpO2 99%, Temp 37.0\u00b0C",
+        "tests": "ECG: Normal. Serial Troponin: <3 ng/L (Negative).",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 589",
+        "complaint": "65y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 590",
+        "complaint": "66y Male. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 591",
+        "complaint": "42y Non-binary. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 592",
+        "complaint": "23y Female. Sore throat.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 593",
+        "complaint": "33y Female. Fall from height. Pain in Ankle.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 594",
+        "complaint": "57y Male. Shortness of breath. History of asthma.",
+        "vitals": "SpO2 88%, HR 120",
+        "tests": "Peak Flow: 150 L/min (Poor)",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 595",
+        "complaint": "87y Female. Worsening chest tightness on exertion. Past history of CABG.",
+        "vitals": "BP 150/90, HR 88, SpO2 96%, Temp 36.6\u00b0C",
+        "tests": "ECG: T-wave inversion in V5-V6. Troponin: 15 ng/L (Borderline).",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 596",
+        "complaint": "94y Non-binary. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 597",
+        "complaint": "27y Non-binary. Productive cough.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 598",
+        "complaint": "22y Male. Fall from height. Pain in Hip.",
+        "vitals": "BP 125/80, HR 90 (Pain), SpO2 98%",
+        "tests": "X-ray: Displaced Fracture",
+        "correct_action": "Admit"
+    },
+    {
+        "name": "Patient 599",
+        "complaint": "35y Male. Medication refill.",
+        "vitals": "BP 120/80, HR 72, SpO2 100%, Temp 36.6\u00b0C",
+        "tests": "Clinical exam: No red flags identified.",
+        "correct_action": "Discharge"
+    },
+    {
+        "name": "Patient 600",
+        "complaint": "50y Female. Dysuria.",
+        "vitals": "BP 120/80, HR 80, Temp 37.8\u00b0C",
+        "tests": "Lactate: 0.8 (Normal)",
+        "correct_action": "Discharge"
+    }
 ]
