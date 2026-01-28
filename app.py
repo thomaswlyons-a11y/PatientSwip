@@ -18,7 +18,6 @@ st.markdown("""
         margin-bottom: 20px;
     }
     
-    /* Stats Bar */
     .stat-box {
         background-color: #222;
         border: 2px solid #00FF00;
@@ -29,7 +28,6 @@ st.markdown("""
         margin-bottom: 10px;
     }
 
-    /* Leaderboard Styles */
     .arcade-container {
         height: 300px;
         overflow: hidden;
@@ -44,7 +42,6 @@ st.markdown("""
         position: absolute;
         width: 100%;
         text-align: center;
-        /* Start below the container */
         transform: translateY(100%);
         animation: scroll-up 15s linear infinite;
     }
@@ -66,8 +63,7 @@ st.markdown("""
 
 # --- 1. Helper Functions ---
 
-def init_game(shift_hours, bed_count):
-    # Load patients
+def init_game(shift_hours, bed_count, patient_volume):
     if not os.path.exists('patients.json'):
         st.error("patients.json not found! Please run the generator first.")
         st.stop()
@@ -75,29 +71,30 @@ def init_game(shift_hours, bed_count):
     with open('patients.json', 'r') as f:
         all_data = json.load(f)
     
-    # Game State Initialization
-    st.session_state.waiting_room = random.sample(all_data, min(50, len(all_data))) # Pool of potential patients
-    st.session_state.active_patients = [] # Patients currently being managed (in waiting room or beds)
+    # Logic: Sample based on daily volume requested
+    # If volume > available in JSON, we just take all of them.
+    sample_size = min(patient_volume, len(all_data))
     
-    # We pull the first few patients into the "active cycle"
+    st.session_state.waiting_room = random.sample(all_data, sample_size)
+    st.session_state.active_patients = []
+    
+    # Fill active slots (simulate busy room)
     for _ in range(min(5, len(st.session_state.waiting_room))):
         st.session_state.active_patients.append(st.session_state.waiting_room.pop(0))
         
     st.session_state.beds_total = bed_count
     st.session_state.beds_occupied = 0
-    st.session_state.time_remaining = shift_hours * 60 # Convert to minutes
+    st.session_state.time_remaining = shift_hours * 60 
     st.session_state.money_spent = 0
-    st.session_state.results_log = [] # Stores correct/incorrect decisions
+    st.session_state.results_log = [] 
     st.session_state.game_over = False
-    st.session_state.current_patient_idx = 0 # Pointer for the cycle
-    st.session_state.last_action = "Shift Started"
+    st.session_state.current_patient_idx = 0 
 
 def get_leaderboard():
     if not os.path.exists('leaderboard.txt'):
         return []
     with open('leaderboard.txt', 'r') as f:
         lines = [line.strip().split(',') for line in f.readlines() if line.strip()]
-    # Sort by Score (Desc)
     return sorted(lines, key=lambda x: -int(x[1]))
 
 # --- 2. Main Menu / Leaderboard ---
@@ -114,10 +111,13 @@ if not st.session_state.game_active:
         shift_len = st.number_input("Shift Duration (Hours)", 1, 12, 4)
         bed_num = st.number_input("Available Beds", 1, 20, 5)
         
-        st.info("⚠️ PoC Trop: Fast (20m) & Expensive.\n⚠️ Lab Trop: Slow (65m+) & Cheap.")
+        # NEW: Patient Volume Toggle
+        pat_vol = st.slider("Daily Patient Volume", 50, 500, 100)
+        
+        st.info("⚠️ Penalties applied for overcrowding!")
         
         if st.button("START SHIFT"):
-            init_game(shift_len, bed_num)
+            init_game(shift_len, bed_num, pat_vol)
             st.session_state.game_active = True
             st.rerun()
 
@@ -139,11 +139,9 @@ if not st.session_state.game_active:
 
 # --- 3. Game Engine ---
 
-# Check Game Over Conditions
 if st.session_state.time_remaining <= 0 or (len(st.session_state.active_patients) == 0 and len(st.session_state.waiting_room) == 0):
     st.session_state.game_active = False
     
-    # Calculate Score
     if len(st.session_state.results_log) > 0:
         safety_score = int((sum(st.session_state.results_log) / len(st.session_state.results_log)) * 100)
     else:
@@ -164,28 +162,26 @@ if st.session_state.time_remaining <= 0 or (len(st.session_state.active_patients
         st.rerun()
     st.stop()
 
-# --- HUD (Heads Up Display) ---
+# --- HUD ---
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("⏱ Time Left", f"{st.session_state.time_remaining} min")
 c2.metric("🛏 Beds", f"{st.session_state.beds_occupied} / {st.session_state.beds_total}")
 c3.metric("💰 Cost", f"${st.session_state.money_spent}")
 c4.metric("👥 Queue", f"{len(st.session_state.waiting_room)}")
 
-# --- Patient Selection Logic (Random Loop) ---
-# Ensure index is valid
+# --- Patient Selection ---
 if st.session_state.current_patient_idx >= len(st.session_state.active_patients):
     st.session_state.current_patient_idx = 0
 
 current_p = st.session_state.active_patients[st.session_state.current_patient_idx]
 
-# Initialize patient specific tracking if new
 if 'status' not in current_p:
-    current_p['status'] = 'Waiting' # Waiting, Bedded, Ready
+    current_p['status'] = 'Waiting' 
     current_p['test_ordered_at'] = None
     current_p['result_time'] = None
     current_p['test_result_str'] = None
 
-# --- Display Patient ---
+# --- Display ---
 st.markdown("---")
 col_img, col_info = st.columns([1, 2])
 
@@ -193,11 +189,6 @@ with col_img:
     st.image(f"https://api.dicebear.com/7.x/pixel-art/svg?seed={current_p['name']}", width=150)
     if current_p['status'] == 'Bedded':
         st.warning(f"🛏 IN BED")
-        # Check if results are back
-        time_elapsed = (st.session_state.time_remaining - current_p['test_ordered_at']) * -1 # Logic inversion because time counts down
-        # Wait logic: current_time is smaller than ordered_time. 
-        # Actually easier: Store "Result Available At Minute X". 
-        
         if st.session_state.time_remaining <= current_p['result_arrival_time']:
             st.success("✅ RESULTS BACK")
             st.info(current_p['test_result_str'])
@@ -212,7 +203,19 @@ with col_info:
 
 # --- Actions ---
 st.write("### Actions")
-ac1, ac2, ac3, ac4, ac5 = st.columns(5)
+# 6 columns to fit new buttons
+ac1, ac2, ac3, ac4, ac5, ac6 = st.columns(6)
+
+# Helper for Bed Check
+def check_bed_availability():
+    if current_p['status'] == 'Bedded':
+        return True, "Already in Bed"
+    if st.session_state.beds_occupied >= st.session_state.beds_total:
+        # PENALTY LOGIC
+        st.session_state.time_remaining -= 15
+        st.error("⚠️ NO BEDS! CORRIDOR CRISIS PENALTY: -15 MINS")
+        return False, "Full"
+    return True, "OK"
 
 # 1. DISCHARGE
 if ac1.button("Discharge"):
@@ -222,11 +225,10 @@ if ac1.button("Discharge"):
         st.session_state.beds_occupied -= 1
     
     st.session_state.active_patients.pop(st.session_state.current_patient_idx)
-    # Add new patient from waiting room to active cycle
     if st.session_state.waiting_room:
         st.session_state.active_patients.append(st.session_state.waiting_room.pop(0))
     
-    st.session_state.time_remaining -= 5 # Paperwork time
+    st.session_state.time_remaining -= 5 
     st.session_state.current_patient_idx = random.randint(0, len(st.session_state.active_patients) - 1) if st.session_state.active_patients else 0
     st.rerun()
 
@@ -241,50 +243,63 @@ if ac2.button("Admit"):
     if st.session_state.waiting_room:
         st.session_state.active_patients.append(st.session_state.waiting_room.pop(0))
         
-    st.session_state.time_remaining -= 15 # Admission takes longer
+    st.session_state.time_remaining -= 15 
     st.session_state.current_patient_idx = random.randint(0, len(st.session_state.active_patients) - 1) if st.session_state.active_patients else 0
     st.rerun()
 
-# 3. PoC TROPONIN (Fast, Expensive)
-if ac3.button("PoC Trop ($50)"):
-    if current_p['status'] == 'Bedded':
-        st.error("Already in a bed!")
-    elif st.session_state.beds_occupied >= st.session_state.beds_total:
-        st.error("NO BEDS AVAILABLE!")
-    else:
-        current_p['status'] = 'Bedded'
-        st.session_state.beds_occupied += 1
-        st.session_state.money_spent += 50
+# 3. GEN DIAGNOSTICS (NEW)
+if ac3.button("Gen Dx ($30)"):
+    available, msg = check_bed_availability()
+    if available and msg != "Full":
+        if current_p['status'] != 'Bedded':
+            current_p['status'] = 'Bedded'
+            st.session_state.beds_occupied += 1
+        
+        st.session_state.money_spent += 30
         current_p['test_ordered_at'] = st.session_state.time_remaining
-        # Arrival time = Current - 20 mins
-        current_p['result_arrival_time'] = st.session_state.time_remaining - 20
-        current_p['test_result_str'] = current_p['tests']
-        st.session_state.time_remaining -= 5 # Action time
+        # Gen Dx takes roughly 45 mins
+        delay = 45 + random.randint(0, 15)
+        current_p['result_arrival_time'] = st.session_state.time_remaining - delay
+        # Construct Gen Results
+        current_p['test_result_str'] = f"Bloods: {current_p['tests'].split('.')[0]} | ECG: As per clinical findings."
+        st.session_state.time_remaining -= 10 # Time to cannulate/ECG
         st.rerun()
 
-# 4. LAB TROPONIN (Slow, Cheap)
-if ac4.button("Lab Trop ($10)"):
-    if current_p['status'] == 'Bedded':
-        st.error("Already in a bed!")
-    elif st.session_state.beds_occupied >= st.session_state.beds_total:
-        st.error("NO BEDS AVAILABLE!")
-    else:
-        current_p['status'] = 'Bedded'
-        st.session_state.beds_occupied += 1
+# 4. PoC TROPONIN
+if ac4.button("PoC Trop ($50)"):
+    available, msg = check_bed_availability()
+    if available and msg != "Full":
+        if current_p['status'] != 'Bedded':
+            current_p['status'] = 'Bedded'
+            st.session_state.beds_occupied += 1
+        
+        st.session_state.money_spent += 50
+        current_p['test_ordered_at'] = st.session_state.time_remaining
+        current_p['result_arrival_time'] = st.session_state.time_remaining - 20
+        current_p['test_result_str'] = current_p['tests']
+        st.session_state.time_remaining -= 5 
+        st.rerun()
+
+# 5. LAB TROPONIN
+if ac5.button("Lab Trop ($10)"):
+    available, msg = check_bed_availability()
+    if available and msg != "Full":
+        if current_p['status'] != 'Bedded':
+            current_p['status'] = 'Bedded'
+            st.session_state.beds_occupied += 1
+        
         st.session_state.money_spent += 10
         current_p['test_ordered_at'] = st.session_state.time_remaining
-        # Arrival time = Current - (65 + random)
         delay = 65 + random.randint(0, 30)
         current_p['result_arrival_time'] = st.session_state.time_remaining - delay
         current_p['test_result_str'] = current_p['tests']
-        st.session_state.time_remaining -= 5 # Action time
+        st.session_state.time_remaining -= 5 
         st.rerun()
 
-# 5. CYCLE / NEXT PATIENT (Random Loop)
-if ac5.button("Cycle / Next"):
-    st.session_state.time_remaining -= 2 # Time passes when reviewing charts
+# 6. CYCLE
+if ac6.button("Cycle / Next"):
+    st.session_state.time_remaining -= 2
     if len(st.session_state.active_patients) > 1:
-        # Pick a random index that isn't the current one (if possible)
         possible_indices = list(range(len(st.session_state.active_patients)))
         possible_indices.remove(st.session_state.current_patient_idx)
         st.session_state.current_patient_idx = random.choice(possible_indices)
